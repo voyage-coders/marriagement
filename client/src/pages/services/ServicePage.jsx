@@ -1,0 +1,1 @@
+//Individual service page component
