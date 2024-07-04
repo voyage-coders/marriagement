@@ -1,19 +1,32 @@
-//Individual service page component
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import { useServices } from '../../context/ServicesContext';
 
-function ServicePage() {
-  let { serviceId } = useParams();
+const ServicePage = () => {
+  const { services, addService, removeService } = useServices();
+
+  const handleSelectService = (service) => {
+    const isServiceAdded = services.some((s) => s.id === service.id);
+    if (!isServiceAdded) {
+      addService(service);
+    } else {
+      console.log('Service already added');
+    }
+  };
 
   return (
     <div>
-      <Header />
-      <h2>Service Details: {serviceId}</h2>
-      <Footer />
+      {/* Render services here */}
+      {services.map((service) => (
+        <div key={service.id}>
+          {service.name}
+          <button onClick={() => removeService(service.id)}>Remove</button>
+        </div>
+      ))}
+      <button onClick={() => handleSelectService({ id: 1, name: 'Service 1' })}>
+        Add Service
+      </button>
     </div>
   );
-}
+};
 
 export default ServicePage;
