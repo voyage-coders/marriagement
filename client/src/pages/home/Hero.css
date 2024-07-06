@@ -1,22 +1,29 @@
-.hero-text {
-    font-size: 30px;
-    color: white;
-}
-
-.hero-para {
-    font-size: 30px;
-}
-
 .modal {
     position: absolute;
     top:200px;
     left: 100px;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    padding:90px;
+    padding:20px;
     background-color: rgb(0, 0, 0,0.3);
     height: 300px;
     width: 500px;
     border-radius:20px;
 }
+
+.hero-text {
+    font-size: 25px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 400px;
+    margin-top: -30px;
+}
+

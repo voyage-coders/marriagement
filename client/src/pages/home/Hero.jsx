@@ -1,14 +1,16 @@
 import './Hero.css';
-
-import React from 'react'
+import HeroButton from './HeroButton';
 
 const Hero = () => {
   return (
     <div>
         <div className='home'>
             <div className='modal'>
-                <p className='hero-text'>HOME</p>
-                <p className='hero-para'>Hey There</p>
+                <p className='hero-text'>GET THE BEST SERVICES 
+FOR YOUR WEDDING
+UAE DESTINATION WEDDING A to Z 
+PLANNING AND EXECUTION</p>
+                <HeroButton/>
             </div>
             
 

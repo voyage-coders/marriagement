@@ -5,8 +5,6 @@ import Dropdown from './Dropdown';
 import Button from './Button';
 import logo from '../../assets/logo.png'
 
-import React from 'react'
-
 
 
 
@@ -57,7 +55,7 @@ function Header() {
                 onMouseLeave={onMouseLeave}
               >
                 <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                  Categories <i className="uil uil-angle-down category-icon"></i>
+                  Services <i className="uil uil-angle-down category-icon"></i>
                 </Link>
                 {dropdown && <Dropdown />}
               </li>
