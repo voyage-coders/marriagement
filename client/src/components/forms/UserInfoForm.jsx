@@ -19,7 +19,7 @@ const UserInfoForm = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submit action
+    e.preventDefault();
     const selectedServices = services.filter((service) => service.selected);
     console.log('User Info:', userInfo);
     console.log('Selected Services:', selectedServices);
