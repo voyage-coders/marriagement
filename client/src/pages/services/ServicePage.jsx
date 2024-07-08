@@ -1,14 +1,21 @@
-//Individual service page component
-import React from 'react'
-import Header from '../../components/header/Header'
+import React, { useState } from 'react';
+import { useBookings } from '../../context/BookingContext';
 
-function ServicePage() {
+const ServicePage = ({ service }) => {
+  const [comment, setComment] = useState('');
+  const { addBooking } = useBookings();
+
+  const handleSubmit = () => {
+    addBooking({ ...service, comment });
+    setComment('');
+  };
+
   return (
     <div>
-        <Header/>
-        <h1>Service 1</h1>
+      <h2>{service.name}</h2>
+      <textarea value={comment} onChange={(e) => setComment(e.target.value)} />
+      <button onClick={handleSubmit}>Add Service</button>
     </div>
-  )
-}
-
-export default ServicePage
+  );
+};
+export default ServicePage;
