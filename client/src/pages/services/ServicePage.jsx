@@ -3,19 +3,30 @@ import { useBookings } from '../../context/BookingContext';
 
 const ServicePage = ({ service }) => {
   const [comment, setComment] = useState('');
-  const { addBooking } = useBookings();
+  const { addService } = useBookings();
+  const serviceName = service?.name;
 
-  const handleSubmit = () => {
-    addBooking({ ...service, comment });
-    setComment('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await addService({ ...service, comment });
+      setComment('');
+      console.log('Booking added');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  return (
-    <div>
-      <h2>{service.name}</h2>
-      <textarea value={comment} onChange={(e) => setComment(e.target.value)} />
-      <button onClick={handleSubmit}>Add Service</button>
-    </div>
+  return (x
+    <form onSubmit={handleSubmit}>
+      <h2>{serviceName}</h2>
+      <textarea
+        aria-label='Comment'
+        value={comment}
+        onChange={(e) => setComment(e.target.value)}
+      ></textarea>
+      <button type='submit'>Add Service</button>
+    </form>
   );
 };
 export default ServicePage;

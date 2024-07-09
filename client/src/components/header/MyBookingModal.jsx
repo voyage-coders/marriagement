@@ -2,18 +2,19 @@ import React from 'react';
 import { useBookings } from '../../context/BookingContext';
 
 const MyBookingsModal = () => {
-  const { bookings } = useBookings();
+  const { services } = useBookings();
 
   return (
     <div>
       <h2>My Bookings</h2>
       <ul>
-        {bookings.map((booking, index) => (
+        {services.map((service, index) => (
           <li key={index}>
-            {booking.name} - {booking.comment}
+            {service.name} - {service.comment}
           </li>
         ))}
       </ul>
     </div>
   );
 };
+export default MyBookingsModal;
