@@ -1,12 +1,14 @@
 .cards-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    padding:40px;
+    gap: 20px;
+    padding:60px;
+    padding-top: 30px;
+    place-items: center;
   }
 
   .services-heading {
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
   }
   
