@@ -6,7 +6,7 @@ const ServicesSection = ({cards}) => {
   return (
     
     <div>
-        <h2 className="services-heading"> Services</h2>
+        <h2 className="services-heading" id="services"> Services</h2>
         <div className="cards-section">
             {cards.map((card, index) => (
             <Card 
