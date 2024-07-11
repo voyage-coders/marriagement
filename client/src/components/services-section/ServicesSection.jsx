@@ -9,7 +9,12 @@ const ServicesSection = ({cards}) => {
         <h2 className="services-heading"> Services</h2>
         <div className="cards-section">
             {cards.map((card, index) => (
-            <Card key={index} image={card.image} text={card.text} />
+            <Card 
+              key={index} 
+              image={card.image} 
+              text={card.text}
+              link={card.link}
+            />
             ))}
         </div>
   </div>
