@@ -1,11 +1,12 @@
-import './Card.css'
+import './Card.css';
+import { Link } from 'react-router-dom';
 
-const Card = ({image,text}) => {
+const Card = ({image,text,link}) => {
   return (
-    <div className="card">
-    <img src={image} alt="Card" className="card-image" />
-    <div className="card-text">{text}</div>
-  </div>
+      <Link to={link} className="card">
+        <img src={image} alt="Card" className="card-image"/>
+        <div className="card-text">{text}</div>
+      </Link> 
   )
 }
 
