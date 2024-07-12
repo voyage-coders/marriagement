@@ -6,9 +6,6 @@ import Button from './Button';
 import logo from '../../assets/images/logo.png'
 
 
-
-
-
 function Header() {
   const [click,setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);

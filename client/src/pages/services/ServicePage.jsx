@@ -1,12 +1,14 @@
 //Individual service page component
-import React from 'react'
-import Header from '../../components/header/Header'
+import Header from '../../components/header/Header';
+import ServiceDetail from '../../components/services-section/ServiceDetail';
+
+import {servicesDetail} from '../../components/services-section/servicesData';
 
 function ServicePage() {
   return (
     <div>
         <Header/>
-        <h1>Service 1</h1>
+        <ServiceDetail services={servicesDetail}/>
     </div>
   )
 }

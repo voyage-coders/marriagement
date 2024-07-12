@@ -7,13 +7,13 @@ import ServicePage from '../pages/services/ServicePage'
 
 function AppRoutes() {
   return (
-    <div>
+    <>
         <Routes>
             <Route path='/' element={<HomePage/>}/>
             <Route path='/contact' element={<Contact/>}/>
-            <Route path='/services' element={<ServicePage/>}/>
+            <Route path='/service/:id' element={<ServicePage/>}/>
         </Routes>
-    </div>
+    </>
     
   )
 }
