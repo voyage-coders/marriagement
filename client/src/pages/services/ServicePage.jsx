@@ -6,7 +6,7 @@ import {servicesDetail} from '../../components/services-section/servicesData';
 
 function ServicePage() {
   return (
-    <div>
+    <div className="service-page">
         <Header/>
         <ServiceDetail services={servicesDetail}/>
     </div>
