@@ -72,7 +72,7 @@ function Header() {
                 </Link>
               </li>
             </ul>
-            <Button />
+            <Button to='/bookings' text='My Bookings' icon='uil-clipboard-alt' />
         </nav>
     </div>
   )
