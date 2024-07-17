@@ -2,9 +2,11 @@ import "./ServiceDetail.css";
 import { useParams } from "react-router-dom";
 import Button from "../header/Button";
 
+
 const ServiceDetail = ({ services }) => {
 	const { id } = useParams();
 	const service = services.find((service) => service.id.toString() === id);
+
 
 	if (!service) {
 		return <div>Service not found</div>;

@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from '../../components/header/Header'
+import './Contact.css'
 
 function Contact() {
   return (
-    <div>
+    <div className="contact-container">
     <Header/>
-    <h1> Contact Page</h1>
+    <h1 className="contact-heading"> Contact Page</h1>
+
     </div>
   )
 }

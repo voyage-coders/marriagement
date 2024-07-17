@@ -10,7 +10,7 @@ function App() {
     <Router>
       <ScrollToTop/>
       <AppRoutes/>
-      <h1 className='h1Test'> Marriagement - A Project by Kseniia and Sharaf</h1>
+      {/* <h1 className='h1Test text-4xl font-bold text-blue-500'> Marriagement - A Project by Kseniia and Sharaf</h1> */}
     </Router>
   )
 }

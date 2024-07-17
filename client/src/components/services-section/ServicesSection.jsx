@@ -1,11 +1,16 @@
 import './ServicesSection.css'
 import Card from './Card'
+import { useTransform, motion } from 'framer-motion';
 
 
-const ServicesSection = ({cards}) => {
+const ServicesSection = ({scrollYProgress, cards}) => {
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [5, 0])
+
   return (
     
-    <div>
+    <motion.div style={{scale, rotate}} className="services-container relative h-screen">
         <h2 className="services-heading" id="services"> Services</h2>
         <div className="cards-section">
             {cards.map((card, index) => (
@@ -17,7 +22,7 @@ const ServicesSection = ({cards}) => {
             />
             ))}
         </div>
-  </div>
+  </motion.div>
   )
 }
 
