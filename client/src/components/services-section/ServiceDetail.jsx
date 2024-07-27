@@ -1,22 +1,32 @@
 import './ServiceDetail.css';
 import { useState } from 'react';
-import { useBookings } from '../../context/BookingContext';
+import { useServices } from '../../context/ServiceContext'; // !!!!!!!!!!!!!!
 import { useParams } from 'react-router-dom';
 import Button from '../header/Button';
+import { servicesDetail } from '../services-section/servicesData'; //!!!!!!
 
-const ServiceDetail = ({ services }) => {
-  const [comment, setComment] = useState('');
+const ServiceDetail = () => {
   const { id } = useParams();
-  const { addBooking } = useBookings();
-  const service = services.find((service) => service.id.toString() === id);
 
-  const handleAddService = () => {
-    addBooking(id, comment);
-    setComment(''); // Reset comment input after adding
-  };
+  const { addService, services } = useServices(); // Hook to manage adding services //!!!!!!!
+  const [comment, setComment] = useState(''); //State to store comment
+  const service = servicesDetail.find(
+    (service) => service.id.toString() === id
+  );
+  console.log('Service ID from URL:', id);
+  console.log('Found service:', service); // Find service by ID
+
   if (!service) {
     return <div>Service not found</div>;
   }
+
+  const handleAddService = () => {
+    const serviceName = service.text;
+    addService(serviceName, comment);
+
+    console.log('Service added:', { serviceName, comment });
+    setComment(''); // Clear comment after adding service
+  };
 
   return (
     <>

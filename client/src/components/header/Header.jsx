@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import Dropdown from './Dropdown';
 import Button from './Button';
 import logo from '../../assets/images/logo.png';
 import MyBookings from '../services-section/MyBookings';
+import { useServices } from '../../context/ServiceContext';
 
 function Header() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [isHovering, setHovering] = useState(false);
+  const { services = [] } = useContext(useServices) || {};
 
   const handleClick = () => setClick(!click);
 
@@ -82,24 +84,29 @@ function Header() {
             </Link>
           </li>
         </ul>
-        {/* Button and its hover effect container */}
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <Button to='/bookings' text='My Bookings' icon='uil-clipboard-alt' />
+
+        <div
+          className='my-bookings-dropdown'
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Button to='#' text='My Bookings' icon='uil-clipboard-alt' />
           {isHovering && (
             <div
-              style={{
-                position: 'absolute',
-                backgroundColor: '#f0f0f0',
-                minWidth: '200px',
-                minHeight: '100px',
-                border: '1px solid #ddd',
-                padding: '10px',
-                boxSizing: 'border-box',
-                wordWrap: 'break-word',
-                maxWidth: '300px',
-                maxHeight: '200px',
-                overflowY: 'auto',
-              }}
+              className='dropdown-container'
+              // style={{
+              //   position: 'absolute',
+              //   backgroundColor: '#f0f0f0',
+              //   minWidth: '200px',
+              //   minHeight: '100px',
+              //   border: '1px solid #ddd',
+              //   padding: '10px',
+              //   boxSizing: 'border-box',
+              //   wordWrap: 'break-word',
+              //   maxWidth: '300px',
+              //   maxHeight: '200px',
+              //   overflowY: 'auto',
+              // }}
             >
               <MyBookings />
             </div>

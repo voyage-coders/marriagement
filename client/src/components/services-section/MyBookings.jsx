@@ -1,18 +1,30 @@
-import { useBookings } from '../../context/BookingContext';
+import React, { useEffect, useState } from 'react';
+import { useServices } from '../../context/ServiceContext';
 
 const MyBookings = () => {
-  const { bookings } = useBookings();
+  const { addService, services } = useServices();
+
+  useEffect(() => {
+    console.log('MyBookings component rendered with services:', services);
+  }, [services]);
+
+  console.log('Rendering service list:', services);
 
   return (
     <div>
       <h2>My Bookings</h2>
-      <ul>
-        {bookings.map((booking) => (
-          <li
-            key={booking.id}
-          >{`Service ID: ${booking.id}, Comment: ${booking.comment}`}</li>
-        ))}
-      </ul>
+
+      {services.length === 0 ? (
+        <p>No bookings added yet.</p>
+      ) : (
+        <ul>
+          {services.map(({ serviceName, comment }, index) => (
+            <li key={index}>
+              {serviceName}: {comment}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
