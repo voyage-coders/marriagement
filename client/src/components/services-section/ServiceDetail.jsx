@@ -11,7 +11,7 @@ const ServiceDetail = ({ services }) => {
 	}
 
 	return (
-		<>
+		<div className="detail-container">
 			<div className="service-container">
 				<h2 className="service-heading">{service.text}</h2>
 				<div className="service-detail-1">
@@ -34,7 +34,7 @@ const ServiceDetail = ({ services }) => {
 					<p>{service.description2}</p>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

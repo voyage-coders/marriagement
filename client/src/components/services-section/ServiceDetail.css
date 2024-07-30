@@ -1,8 +1,8 @@
 .service-container {
   display: grid;
   place-items: center;
-  height: 90vh;
   padding: 20px;
+  height: 100vh;
   box-sizing: border-box;
 }
 
@@ -13,9 +13,8 @@
   gap: 20px;
   align-items: center;
   margin: 20px auto;
-  width: 70%; /* Adjust width as needed */
-  max-width: 1200px; /* Adjust max-width as needed */
-  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .service-heading {
@@ -32,7 +31,7 @@
 .service-detail-1 p,
 .service-detail-2 p {
   margin: 0;
-  align-self: start; /* Ensure the text starts at the top */
+  align-self: start;
   text-align: left;
 }
 
@@ -41,8 +40,16 @@
 }
 
 .detail-1-text {
-  align-self: start;
-  gap:10px;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Add auto to the third row for the button */
+  gap: 10px;
+  height: 100%; /* Ensure the container fills the available space */
+}
+
+.detail-1-text .btn {
+  align-self: end; /* Align the button at the bottom */
+  justify-self: start; /* Align the button to the start of its container */
+  max-width: 250px; /* Set a max width if needed */
 }
 
 @media (max-width: 768px) {
@@ -56,4 +63,3 @@
     max-width: 100%; /* Make image responsive */
   }
 }
-
