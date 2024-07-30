@@ -52,6 +52,12 @@
   max-width: 250px; /* Set a max width if needed */
 }
 
+.form-container {
+  padding:50px;
+  text-align: center;
+}
+
+
 @media (max-width: 768px) {
   .service-detail-1,
   .service-detail-2 {
