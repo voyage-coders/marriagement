@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import Dropdown from "./Dropdown";
 import Button from "./Button";
 import logo from "../../assets/images/logo.png";
 import ServicesForm from "../forms/AddedService";
+import { ServicesContext } from "../../context/ServicesContext";
 
 function Header() {
 	const [click, setClick] = useState(false);
 	const [dropdown, setDropdown] = useState(false);
 	const [bookings, setBookings] = useState(false);
+
+  const servicesSelected = useContext(ServicesContext);
 
 	const handleClick = () => setClick(!click);
 
@@ -91,7 +94,7 @@ function Header() {
 							text="My Bookings"
 							icon="uil-clipboard-alt"
 						/>
-						{bookings && <ServicesForm />}
+						{bookings && servicesSelected.services.length !== 0 && <ServicesForm />}
 					</li>
 				</ul>
 			</nav>
