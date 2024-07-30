@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Button.css';
 
-function Button({ to, href, text, icon }) {
+function Button({ to, href, text, icon}) {
   if (href) {
     return (
       <a href={href} className='btn'>

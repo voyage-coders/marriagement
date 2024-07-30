@@ -10,22 +10,31 @@
   .dropdown-menu {
     background-color: rgba(0, 0, 0, 0.556);
     position: absolute;
-    top: 80px;
+    top: 65px;
     list-style: none;
     text-align: start;
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 0.8px; /* Adjust as needed */
-    left: 210px;
+    left: -240px;
+    width: 800px;
   }
   
   
   .dropdown-menu li {
     background: #7781A6;
-    
   }
   
+  .dropdown-menu li {
+    border-right: 0.3px solid gray; /* Right border for all columns */
+    box-sizing: border-box; /* Include padding and border in width and height */
+}
+
+/* Remove right border from the last column */
+.dropdown-menu li:nth-child(4n) {
+    border-right: none;
+}
+
   .dropdown-submenu li:hover {
     background: #E14B8F;
     cursor: pointer;
