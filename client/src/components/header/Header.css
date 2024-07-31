@@ -1,4 +1,117 @@
 .navbar {
+  background-color: rgb(26, 23, 23);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(6, auto); /* Adjusted to accommodate 6 items */
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 80vw; /* Increased width to fit all items */
+  justify-content: end;
+  margin-right: 3rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative; /* Ensure proper positioning for dropdown */
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links:hover {
+  background-color: #7781A6;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+.uil-bars {
+  color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.category-icon {
+  font-size: 1.5rem;
+}
+
+.home-navbar {
+  background-color: rgba(26, 23, 23, 0.2);
+  position: absolute;
+  width: 100%;
+}
+
+
+.service-form-nav {
+  display: flex;
+  align-items: center;
+  position: relative; /* Ensure it aligns with other items */
+}
+
+/* Adjust button styles */
+.service-form-nav .nav-links {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.service-form-nav .nav-links:hover {
+  background-color: #7781A6;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+/* Ensure the dropdown menu (ServicesForm) is properly aligned */
+.services-form {
+  display: none;
+  position: absolute;
+  top: 85%; /* Position it directly below the nav item */
+  right: 0;
+  background-color: white;
+  color: rgba(41, 42, 44, 0.847);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 5;
+  width: 400px;
+  right: -50px;
+}
+
+.service-form-nav:hover .services-form {
+  display: block;
+}
+
+
+
+/* .navbar {
     background-color: rgb(26, 23, 23);
     height: 80px;
     display: flex;
@@ -64,7 +177,7 @@
     background-color: rgb(26, 23, 23,0.2);;
     position: absolute; 
     width: 100%;
-  }
+  } */
 
 
   @media screen and (max-width: 960px) {

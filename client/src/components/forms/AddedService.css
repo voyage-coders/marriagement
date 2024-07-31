@@ -1,0 +1,23 @@
+/* AddedService.css */
+
+.services-form h3 {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    color: rgba(41, 42, 44, 0.847);
+    border: 2px solid #E14B8F; /* Pink border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Optional: Add padding to avoid text touching the border */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  }
+  
+  
+  .services-form h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    color: rgba(37, 38, 39, 0.647);
+    text-decoration: underline; 
+  }
+  
+  .services-form li {
+    list-style: none;
+  }
