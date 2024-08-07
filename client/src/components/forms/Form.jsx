@@ -1,20 +1,21 @@
-import { useContext } from "react";
-import { ServicesContext } from "../../context/ServicesContext";
+import { useContext } from 'react';
+import { ServicesContext } from '../../context/ServicesContext';
 
 const Form = (props) => {
   const services = useContext(ServicesContext);
-  console.log("Services", services);
+
+  const addService = () => {
+    if (!services.services.some((service) => service.name === props.name)) {
+      services.setServices([...services.services, { name: props.name }]);
+    } else {
+      console.log('Service already added');
+    }
+  };
+
   return (
-    <div className="form-card">
+    <div className='form-card'>
       <p> Service Name : {props.name} </p>
-      <button
-        onClick={() =>
-          services.setServices([...services.services, { name: props.name }])
-        }
-      >
-        {" "}
-        Add Service{" "}
-      </button>
+      <button onClick={addService}>Add Service</button>
     </div>
   );
 };
